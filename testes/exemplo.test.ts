@@ -1,19 +1,35 @@
 const {By, Key, Builder} = require("selenium-webdriver");
 require("chromedriver");
 
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+
 async function example(){
-    var pesquisa = 'testes automaticos com selenium'
+    var login = 'system'
+    var senha = 'admin123'
 
     let driver = await new Builder().forBrowser('chrome').build();
 
-    await driver.get('http://google.com');
+    await driver.get('https://10.100.20.101/admin/login_login.action');
 
-    await driver.findElement(By.name('q')).sendKeys(pesquisa, Key.RETURN);
+    await driver.findElement(By.id('details-button')).click();
+    await driver.findElement(By.id('proceed-link')).click();
 
-    var title = await driver.getTitle();
-    console.log(' Title is: ', title);
+    await driver.findElement(By.id('loginName')).sendKeys(login, Key.RETURN);
+    await driver.findElement(By.id('loginPass')).sendKeys(senha, Key.RETURN);
 
-    await driver.quit();
+    await driver.findElement(By.id('btnLogin')).click();
+
+    await sleep(10000);
+
+    //await driver.findElement(By.linkText('Dispositivo')).click();
+    await driver.findElement(By.xpath('li:nth-child(1) > ul > li.h-menu-operate > button')).click();
+    //await driver.quit();
 }
 
 example()
