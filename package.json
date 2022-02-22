@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "chromedriver": "^98.0.1",
+    "geckodriver": "^3.0.1",
+    "selenium-webdriver": "^4.1.1"
+  },
+  "name": "teste_cadastro_central_alarme_automatico",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run single",
+    "single": ".../testes/selenium_IDE.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aguasam/teste_cadastro_central_alarme_automatico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aguasam/teste_cadastro_central_alarme_automatico/issues"
+  },
+  "homepage": "https://github.com/aguasam/teste_cadastro_central_alarme_automatico#readme",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^9.2.1"
+  }
+}
