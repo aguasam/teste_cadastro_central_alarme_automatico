@@ -28,7 +28,7 @@ async function example(){
     await sleep(10000);
 
     //await driver.findElement(By.linkText('Dispositivo')).click();
-    await driver.findElement(By.xpath('li:nth-child(1) > ul > li.h-menu-operate > button')).click();
+    await driver.findElement(By.xpath('button[@type=button]')).click();
     //await driver.quit();
 }
 
